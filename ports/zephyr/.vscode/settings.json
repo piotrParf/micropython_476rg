@@ -1,0 +1,14 @@
+{
+    "restructuredtext.confPath": "",
+    "cmake.configureArgs": [
+        "-DBOARD=nucleo_l476rg",
+        // "-DBOARD=nucleo_h743zi",
+        "-DNO_BUILD_TYPE_WARNING=TRUE",
+        "-DZEPHYR_TOOLCHAIN_VARIANT=zephyr",
+        "-DBOARD_FLASH_RUNNER=jlink",
+        //"-DCONF_FILE=prj.conf overlay_encrypted_uf2.conf",
+        // "-DCONF_FILE=prj.conf overlay_encrypted_uf2_prod.conf",
+        // "-DCONF_FILE=prj.conf",
+        //"-DCONF_FILE=prj.conf overlay_uf2.conf",
+    ],
+}

@@ -23,18 +23,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-#include <zephyr/zephyr.h>
+#include <zephyr/kernel.h>
 #include <zephyr/console/console.h>
 #include "zephyr_getchar.h"
 
 int real_main(void);
 
-void main(void) {
+extern void z_impl_k_yield(void);
+
+int main(void) {
     #ifdef CONFIG_CONSOLE_SUBSYS
     console_init();
     #else
     zephyr_getchar_init();
     #endif
+    z_impl_k_busy_wait(100);
     real_main();
 
     // This is needed so the linker includes k_timer_init, z_impl_k_timer_start
