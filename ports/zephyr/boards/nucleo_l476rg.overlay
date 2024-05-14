@@ -1,0 +1,10 @@
+/*
+ * Copyright (c) 2021 Thomas Popp
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&gpioa {
+	label = "GPIOA";
+};
+
